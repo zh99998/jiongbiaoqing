@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<style type="text/css">
+	#dropbox { height:240px; line-height:240px; text-align:center; background:#cde; border:dashed 2px #999; color:#666; }
+	</style>
+</head>
+<body>
+	<div id="dropbox">请将要上传的文件拖拽到这里</div>
+	<span id="lblMessage"></span>
+	<script type="text/javascript">
+	/*if (typeof(Worker) !== undefined) {
+		$('#dropbox').bind('dragenter', function(e) {
+			this.style.borderColor = '#ccc';
+			this.style.background = '#def';
+		});
+		$('#dropbox').bind('dragleave', function(e) {
+			this.style.borderColor = '#999';
+			this.style.background = '#cde';
+		});
+		$('#dropbox').bind('dragover', function(e) {
+			e.stopPropagation();
+			e.preventDefault();
+			console.log('blah blah blah');
+		});
+		$('#dropbox').get(0).ondrop = function(e) {
+			e.stopPropagation();
+			e.preventDefault();
+			var fileList = e.dataTransfer.files;
+			if (fileList.length > 1) {
+				$('#lblMessage').html('请不要一次拖入多个文件！');
+				return false;
+			}
+			var file = fileList[0];
+			if (!/^(image)/.test(file.type)) {
+				$('#lblMessage').html('您所上传的文件不是图片！');
+			}
+		};
+	}
+	else {*/
+		$('#dropbox').html('<form id="frmUpload" name="frmUpload" action="/uploadfile.php" enctype="multipart/form-data" method="post">请先上传一个图片文件<br><input type="file" name="fileUpload" id="fileUpload"><br><input type="submit" value="上传"></form>');
+		$('#dropbox').css({'line-height':'32px'});
+		$('#dropbox form').css({'padding-top':'80px'});
+		function getXmlHttp() {
+			var xmlHttp=null;
+
+			try {
+				// Firefox, Opera 8.0+, Safari
+				xmlHttp = new XMLHttpRequest();
+			}
+			catch (e) {
+				// Internet Explorer
+				try {
+					xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+				}
+				catch (e) {
+					xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+			}
+			return xmlHttp;
+		}
+		document.forms['frmUpload'].onsubmit = function(e) {
+			if (document.getElementById('fileUpload').value == '') {
+				alert('Please choise a file first !');
+				return false;
+			}
+			var formData = new FormData(document.getElementById('frmUpload'));
+			console.log(formData);
+			var xmlHttp = new getXmlHttp();
+			xmlHttp.open('POST', '/uploadfile.php', true);
+			xmlHttp.setRequestHeader('Content-Type', 'multipart/form-data');
+			xmlHttp.onreadystatechange = function() {
+				if(xmlHttp.readyState == 4 || xmlHttp.readyState == 'complete') {
+					alert(xmlHttp.responseText);
+				}
+			};
+			xmlHttp.send(formData);
+			return false;
+		};
+	/*}*/
+	</script>
+</body>
+</html>

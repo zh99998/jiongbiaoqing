@@ -1,0 +1,58 @@
+body {
+	padding-top: 60px;
+	background-color: #f5f5f5;
+    padding-bottom: 20px;
+}
+.main {
+	background-color: #fff;
+	border: 1px solid #e5e5e5;
+	-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+    		border-radius: 5px;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+		-moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    		box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    padding-bottom: 13px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.page-header {
+	margin: 0;
+}
+#register {
+	padding-top: 27px;
+}
+#login {
+    padding-top: 27px;
+}
+.creator {
+	padding-top: 12px;
+	width: 41.66666666666667%;
+}
+.width-33 {
+	width: 33.33333333333333%;
+}
+.view {
+	float: right;
+	max-height: 1000px;
+	max-width: 574px;
+	padding-top: 12px;
+}
+.pagination {
+    margin: 0;
+}
+.paginations {
+    text-align: center;
+}
+.staff {
+    padding-top: 20px;
+}
+.row {
+    padding-top: 10px;
+}
+.input-group {
+    padding-top: 5px;
+}
+.tohide {
+    display: none;
+}

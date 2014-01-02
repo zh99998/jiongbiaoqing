@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>制作器 - 囧表情</title>
+        <!-- jQuery 1.10.2 -->
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <!-- Bootstrap 3.0.3 -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Global CSS -->
+        <link rel="stylesheet" href="css/global.css">
+        <!-- ColorPicker CSS -->
+        <link rel="stylesheet" href="css/bootstrap-colorpicker.min.css">
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">囧表情</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">主页</a></li>
+                        <li><a href="#">列表</a></li>
+                        <li><a href="#">关于</a></li>
+                        <li><a href="#">帮助</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">这里显示用户名 <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">制作</a></li>
+                                <li><a href="#">修改密码</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">登出</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="main">
+                <div class="page-header">
+                    <h1>制作器</h1>
+                </div>
+                <div class="row">
+                    <div class="generator col-md-6">
+                        <input class="form-control input-lg" type="text" id="creatorName" placeholder="生成器名称">
+                        <h4>字段</h4>
+                        <form class="form-horizontal" role="form" id="sentences">
+                            <div class="form-group">
+                                <label for="inputText1" class="col-xs-1 control-label">1</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="inputText1">
+                                </div>
+                                <button type="button" class="btn btn-primary picker">
+                                    <span class="glyphicon glyphicon-tint"></span> <span class="caret"></span>
+                                </button>
+                                <button type="button" class="btn btn-primary tools">
+                                    <span class="glyphicon glyphicon-font"></span> <span class="caret"></span>
+                                </button>
+                                <div class="tohide" id="generator-tools">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                            <span class="glyphicon glyphicon-text-height"></span> <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">12 点</a></li>
+                                            <li><a href="#">14 点</a></li>
+                                            <li><a href="#">18 点</a></li>
+                                            <li><a href="#">24 点</a></li>
+                                            <li><a href="#">30 点</a></li>
+                                            <li><a href="#">36 点</a></li>
+                                            <li><a href="#">48 点</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                            <span class="glyphicon glyphicon-align-left"></span> <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#"><span class="glyphicon glyphicon-align-left"></span> 左对齐</a></li>
+                                            <li><a href="#"><span class="glyphicon glyphicon-align-center"></span> 居中</a></li>
+                                            <li><a href="#"><span class="glyphicon glyphicon-align-right"></span> 右对齐</a></li>
+                                            <li><a href="#"><span class="glyphicon glyphicon-arrow-up"></span> 置顶</a></li>
+                                            <li><a href="#"><span class="glyphicon glyphicon glyphicon-arrow-down"></span> 置底</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-danger" disabled="disabled"><span class="glyphicon glyphicon-trash"></span></button>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputText2" class="col-xs-1 control-label">2</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="inputText2">
+                                </div>
+                                <button type="button" class="btn btn-primary picker">
+                                    <span class="glyphicon glyphicon-tint"></span> <span class="caret"></span>
+                                </button>
+                                <button type="button" class="btn btn-primary tools">
+                                    <span class="glyphicon glyphicon-font"></span> <span class="caret"></span>
+                                </button>
+                                <div class="tohide" id="generator-tools">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                            <span class="glyphicon glyphicon-text-height"></span> <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">12 点</a></li>
+                                            <li><a href="#">14 点</a></li>
+                                            <li><a href="#">18 点</a></li>
+                                            <li><a href="#">24 点</a></li>
+                                            <li><a href="#">30 点</a></li>
+                                            <li><a href="#">36 点</a></li>
+                                            <li><a href="#">48 点</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                            <span class="glyphicon glyphicon-align-left"></span> <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#"><span class="glyphicon glyphicon-align-left"></span> 左对齐</a></li>
+                                            <li><a href="#"><span class="glyphicon glyphicon-align-center"></span> 居中</a></li>
+                                            <li><a href="#"><span class="glyphicon glyphicon-align-right"></span> 右对齐</a></li>
+                                            <li><a href="#"><span class="glyphicon glyphicon-arrow-up"></span> 置顶</a></li>
+                                            <li><a href="#"><span class="glyphicon glyphicon glyphicon-arrow-down"></span> 置底</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+                            </div>
+                            <button type="button" class="btn btn-success" id="plus-one">
+                                <span class="glyphicon glyphicon-plus"></span> 添加一条
+                            </button>
+                        </form>
+                        <br>
+                        <button type="submit" class="btn btn-success">提交</button>
+                    </div>
+                    <div class="view col-md-6">
+                        <img src="" alt="生成图" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ColorPicker Javascript -->
+        <script src="js/bootstrap-colorpicker.min.js"></script>
+        <!-- Generator Javascript -->
+        <script src="js/generator.js"></script>
+    </body>
+</html>
